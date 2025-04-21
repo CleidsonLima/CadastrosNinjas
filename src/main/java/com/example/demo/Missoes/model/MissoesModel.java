@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.Missoes.model;
 
 import com.example.demo.Ninja.model.NinjaModel;
 import jakarta.persistence.*;

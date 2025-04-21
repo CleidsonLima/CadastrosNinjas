@@ -1,11 +1,9 @@
 package com.example.demo.Ninja.model;
 
 
-import com.example.demo.model.MissoesModel;
+import com.example.demo.Missoes.model.MissoesModel;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 
 @Getter
@@ -22,7 +20,7 @@ public class NinjaModel {
     @EqualsAndHashCode.Include
 
     private Long id;
-    private String name;
+    private String nome;
 
     @Column(unique = true)
     private String email;
