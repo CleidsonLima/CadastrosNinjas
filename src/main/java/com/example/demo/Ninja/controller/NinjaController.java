@@ -17,13 +17,13 @@ public class NinjaController {
 
     @GetMapping (value = "/{id}")
 
-        public NinjaModel findByIdNinja(@PathVariable Long id){
+        public NinjaDTO findByIdNinja(@PathVariable Long id){
         return ninjaService.findByIdNinja(id);
         }
 
 
     @GetMapping()
-    public List<NinjaModel> FindAll() {
+    public List<NinjaDTO> FindAll() {
         return ninjaService.findAllNinja();
     }
 
@@ -40,7 +40,7 @@ public class NinjaController {
 
 
     @PutMapping("/{id}")
-    public NinjaModel updateNinjaPorId(@PathVariable Long id, @RequestBody NinjaModel ninja){
+    public NinjaDTO updateNinjaPorId(@PathVariable Long id, @RequestBody NinjaDTO ninja){
         return ninjaService.updateNinja(id, ninja);
     }
 
