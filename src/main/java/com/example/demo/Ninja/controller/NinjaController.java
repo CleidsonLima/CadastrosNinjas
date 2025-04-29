@@ -1,5 +1,6 @@
 package com.example.demo.Ninja.controller;
 
+import com.example.demo.Ninja.dto.NinjaDTO;
 import com.example.demo.Ninja.model.NinjaModel;
 import com.example.demo.Ninja.service.NinjaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class NinjaController {
     }
 
     @PostMapping("/criar")
-    public NinjaModel create(@RequestBody NinjaModel ninja){
+    public NinjaDTO create(@RequestBody NinjaDTO ninja){
          return ninjaService.createNinja(ninja);
 
     }

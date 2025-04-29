@@ -1,5 +1,7 @@
 package com.example.demo.Ninja.service;
 
+import com.example.demo.Ninja.dto.NinjaDTO;
+import com.example.demo.Ninja.mapper.NinjaMapper;
 import com.example.demo.Ninja.model.NinjaModel;
 import com.example.demo.Ninja.repository.NinjaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ public class NinjaService {
 
     @Autowired
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
 
     public List<NinjaModel> findAllNinja() {
@@ -25,8 +28,10 @@ public class NinjaService {
         return findById.orElse(null);
     }
 
-    public NinjaModel createNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    public NinjaDTO createNinja(NinjaDTO ninjaDTO) {
+        NinjaModel ninja = new NinjaMapper().map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     public void deleteNinja(Long id) {
