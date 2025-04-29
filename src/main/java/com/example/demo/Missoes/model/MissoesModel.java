@@ -1,6 +1,7 @@
 package com.example.demo.Missoes.model;
 
 import com.example.demo.Ninja.model.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,5 +26,6 @@ public class MissoesModel {
     private String dificuldade;
 
     @OneToMany(mappedBy ="missoes")
+    @JsonIgnore
     private List<NinjaModel> ninja;
 }
