@@ -38,9 +38,9 @@ public class NinjaController {
     }
 
 
-    @PutMapping("/atualizar")
-    public String updateNinja(){
-        return "Atualizado";
+    @PutMapping("/{id}")
+    public NinjaModel updateNinjaPorId(@PathVariable Long id, @RequestBody NinjaModel ninja){
+        return ninjaService.updateNinja(id, ninja);
     }
 
 
